@@ -41,7 +41,7 @@ resource "aws_route_table_association" "associate-1a-rt" {
   route_table_id = aws_route_table.rt_public.id
 }
 
-resource "aws_instance" "web001" {
+resource "aws_instance" "jenkins-1" {
   ami           = "ami-007020fd9c84e18c7"
   instance_type = "t2.micro"
   subnet_id = aws_subnet.subnet_1a.id
@@ -49,7 +49,7 @@ resource "aws_instance" "web001" {
   key_name = "Aws-key-2024"
   user_data = file("script.sh")
   tags = {
-    Name = "Web001"
+    Name = "jenkins-1"
   }
 }
 
